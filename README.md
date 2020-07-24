@@ -92,7 +92,7 @@ We have released BYOR as a docker image for our users. The image is available in
 
 ```
 $ docker pull sikiryl/kubeops-tech-radar
-$ docker run --rm -p 8080:80 -e SERVER_NAMES="localhost 127.0.0.1" sikiryl/kubeops-tech-radar
+$ docker run -d --rm --name kubeops-tech-radar -p 8080:80 -e SERVER_NAMES="localhost 127.0.0.1" sikiryl/kubeops-tech-radar
 $ open http://localhost:8080
 ```
 
