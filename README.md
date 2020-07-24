@@ -88,11 +88,11 @@ export GTM_ID=[GTM ID]
 ```
 
 ## Docker Image
-We have released BYOR as a docker image for our users. The image is available in our [DockerHub Repo](https://hub.docker.com/r/wwwthoughtworks/build-your-own-radar/). To pull and run the image, run the following commands.
+We have released BYOR as a docker image for our users. The image is available in our [DockerHub Repo](https://hub.docker.com/r/sikiryl/kubeops-tech-radar/). To pull and run the image, run the following commands.
 
 ```
-$ docker pull wwwthoughtworks/build-your-own-radar
-$ docker run --rm -p 8080:80 -e SERVER_NAMES="localhost 127.0.0.1" wwwthoughtworks/build-your-own-radar
+$ docker pull sikiryl/kubeops-tech-radar
+$ docker run --rm -p 8080:80 -e SERVER_NAMES="localhost 127.0.0.1" sikiryl/kubeops-tech-radar
 $ open http://localhost:8080
 ```
 
