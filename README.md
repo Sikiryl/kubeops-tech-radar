@@ -63,7 +63,7 @@ That's it!
 
 ***Note:*** The quadrants of the radar, and the order of the rings inside the radar will be drawn in the order they appear in your data.
 
-Check [this page](https://www.thoughtworks.com/radar/how-to-byor) for step by step guidance.
+Check [this page](https://www.kubeops.guru/radar/how-to-byor) for step by step guidance.
 
 ### More complex usage
 

@@ -442,7 +442,7 @@ const Radar = function (size, radar) {
     header.select('.radar-title')
       .append('div')
       .attr('class', 'radar-title__logo')
-      .html('<a href="https://www.thoughtworks.com"> <img src="/images/logo.png" /> </a>')
+      .html('<a href="https://www.kubeops.guru"> <img src="./images/logo.png" /> </a>')
 
     buttonsGroup = header.append('div')
       .classed('buttons-group', true)
@@ -474,13 +474,6 @@ const Radar = function (size, radar) {
       addButton(quadrants[i])
     })
 
-    buttonsGroup.append('div')
-      .classed('print-radar-btn', true)
-      .append('div')
-      .classed('print-radar button no-capitalize', true)
-      .text('Print this radar')
-      .on('click', window.print.bind(window))
-
     alternativeDiv.append('div')
       .classed('search-box', true)
       .append('input')
@@ -489,19 +482,6 @@ const Radar = function (size, radar) {
       .classed('search-radar', true)
 
     AutoComplete('#auto-complete', quadrants, searchBlip)
-  }
-
-  function plotRadarFooter () {
-    d3.select('body')
-      .insert('div', '#radar-plot + *')
-      .attr('id', 'footer')
-      .append('div')
-      .attr('class', 'footer-content')
-      .append('p')
-      .html('Powered by <a href="https://www.thoughtworks.com"> ThoughtWorks</a>. ' +
-      'By using this service you agree to <a href="https://www.thoughtworks.com/radar/tos">ThoughtWorks\' terms of use</a>. ' +
-      'You also agree to our <a href="https://www.thoughtworks.com/privacy-policy">privacy policy</a>, which describes how we will gather, use and protect any personal data contained in your public Google Sheet. ' +
-      'This software is <a href="https://github.com/thoughtworks/build-your-own-radar">open source</a> and available for download and self-hosting.')
   }
 
   function mouseoverQuadrant (order) {
@@ -585,18 +565,18 @@ const Radar = function (size, radar) {
       .append('div')
       .classed('multiple-sheet-button-group', true)
 
-    alternativeSheetButton.append('p').text('Choose a sheet to populate radar')
     alternatives.forEach(function (alternative) {
       alternativeSheetButton
         .append('div:a')
         .attr('class', 'first full-view alternative multiple-sheet-button')
-        .attr('href', constructSheetUrl(alternative))
+        .attr('href', "javascript:void(0);")
         .text(alternative)
 
       if (alternative === currentSheet) {
         d3.selectAll('.alternative').filter(function () {
           return d3.select(this).text() === alternative
-        }).attr('class', 'highlight multiple-sheet-button')
+        }).attr('class', 'highlight multiple-sheet-button inactive-link')
+        .attr('style', 'cursor: default; color: #ee0b77;')
       }
     })
   }
@@ -627,7 +607,6 @@ const Radar = function (size, radar) {
       plotBlips(quadrantGroup, rings, quadrant)
     })
 
-    plotRadarFooter()
   }
 
   return self

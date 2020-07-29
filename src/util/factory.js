@@ -202,9 +202,11 @@ const GoogleSheetInput = function () {
   var sheet
 
   self.build = function () {
-    var domainName = DomainName(window.location.search.substring(1))
-    var queryString = window.location.href.match(/sheetId(.*)/)
-    var queryParams = queryString ? QueryParams(queryString[0]) : {}
+    var domainName = "docs.google.com"
+    var queryParams = {sheetId: "https://docs.google.com/spreadsheets/d/1U_EN7Le98ilomxLz3nWbQId6GZfPBXHdFMxd_niwdpA/edit#gid=0"}
+
+    console.log("DonmainName: ", domainName)
+    console.log("queryParams: ", queryParams)
 
     if (domainName && queryParams.sheetId.endsWith('csv')) {
       sheet = CSVDocument(queryParams.sheetId)
@@ -222,14 +224,6 @@ const GoogleSheetInput = function () {
 
       plotLogo(content)
 
-      var bannerText = '<div><h1>Build your own radar</h1><p>Once you\'ve <a href ="https://www.thoughtworks.com/radar/byor">created your Radar</a>, you can use this service' +
-        ' to generate an <br />interactive version of your Technology Radar. Not sure how? <a href ="https://www.thoughtworks.com/radar/how-to-byor">Read this first.</a></p></div>'
-
-      plotBanner(content, bannerText)
-
-      plotForm(content)
-
-      plotFooter(content)
     }
   }
 
@@ -237,7 +231,7 @@ const GoogleSheetInput = function () {
 }
 
 function setDocumentTitle () {
-  document.title = 'Build your own Radar'
+  document.title = 'KubeOps Tech Radar'
 }
 
 function plotLoading (content) {
@@ -251,58 +245,12 @@ function plotLoading (content) {
 
   plotLogo(content)
 
-  var bannerText = '<h1>Building your radar...</h1><p>Your Technology Radar will be available in just a few seconds</p>'
-  plotBanner(content, bannerText)
-  plotFooter(content)
 }
 
 function plotLogo (content) {
   content.append('div')
     .attr('class', 'input-sheet__logo')
-    .html('<a href="https://www.thoughtworks.com"><img src="/images/tw-logo.png" / ></a>')
-}
-
-function plotFooter (content) {
-  content
-    .append('div')
-    .attr('id', 'footer')
-    .append('div')
-    .attr('class', 'footer-content')
-    .append('p')
-    .html('Powered by <a href="https://www.thoughtworks.com"> ThoughtWorks</a>. ' +
-      'By using this service you agree to <a href="https://www.thoughtworks.com/radar/tos">ThoughtWorks\' terms of use</a>. ' +
-      'You also agree to our <a href="https://www.thoughtworks.com/privacy-policy">privacy policy</a>, which describes how we will gather, use and protect any personal data contained in your public Google Sheet. ' +
-      'This software is <a href="https://github.com/thoughtworks/build-your-own-radar">open source</a> and available for download and self-hosting.')
-}
-
-function plotBanner (content, text) {
-  content.append('div')
-    .attr('class', 'input-sheet__banner')
-    .html(text)
-}
-
-function plotForm (content) {
-  content.append('div')
-    .attr('class', 'input-sheet__form')
-    .append('p')
-    .html('<strong>Enter the URL of your <a href="https://www.thoughtworks.com/radar/how-to-byor" target="_blank">Google Sheet or CSV</a> file below…</strong>')
-
-  var form = content.select('.input-sheet__form').append('form')
-    .attr('method', 'get')
-
-  form.append('input')
-    .attr('type', 'text')
-    .attr('name', 'sheetId')
-    .attr('placeholder', 'e.g. https://docs.google.com/spreadsheets/d/<sheetid> or hosted CSV file')
-    .attr('required', '')
-
-  form.append('button')
-    .attr('type', 'submit')
-    .append('a')
-    .attr('class', 'button')
-    .text('Build my radar')
-
-  form.append('p').html("<a href='https://www.thoughtworks.com/radar/how-to-byor'>Need help?</a>")
+    .html('<a href="https://www.kubeops.guru"><img src="./images/logo.png" / ></a>')
 }
 
 function plotErrorMessage (exception) {
@@ -315,14 +263,9 @@ function plotErrorMessage (exception) {
 
   plotLogo(content)
 
-  var bannerText = '<div><h1>Build your own radar</h1><p>Once you\'ve <a href ="https://www.thoughtworks.com/radar/byor">created your Radar</a>, you can use this service' +
-    ' to generate an <br />interactive version of your Technology Radar. Not sure how? <a href ="https://www.thoughtworks.com/radar/how-to-byor">Read this first.</a></p></div>'
-
-  plotBanner(content, bannerText)
-
   d3.selectAll('.loading').remove()
   message = "Oops! We can't find the Google Sheet you've entered"
-  var faqMessage = 'Please check <a href="https://www.thoughtworks.com/radar/how-to-byor">FAQs</a> for possible solutions.'
+  var faqMessage = 'Please check <a href="https://www.kubeops.guru/radar/how-to-byor">FAQs</a> for possible solutions.'
   if (exception instanceof MalformedDataError) {
     message = message.concat(exception.message)
   } else if (exception instanceof SheetNotFoundError) {
@@ -346,7 +289,6 @@ function plotErrorMessage (exception) {
   errorContainer.append('div').append('p')
     .html(homePage)
 
-  plotFooter(content)
 }
 
 function plotUnauthorizedErrorMessage () {
@@ -356,10 +298,6 @@ function plotUnauthorizedErrorMessage () {
   setDocumentTitle()
 
   plotLogo(content)
-
-  var bannerText = '<div><h1>Build your own radar</h1></div>'
-
-  plotBanner(content, bannerText)
 
   d3.selectAll('.loading').remove()
   const currentUser = GoogleAuth.geEmail()
