@@ -73,18 +73,21 @@ body {
         background-color: #eee !important;
         color: black !important;
     }
-    .btn-tool {
-    background-color: #86b782;
-    }
-    .btn-monitoring {
-    background-color: #1ebccd;
-    }
-    .btn-security {
-    background-color: #f38a3e;
-    }
-    .btn-techniques {
-    background-color: #b32059;
-    }
+        .btn-tool {
+        background-color: #86b782;
+        }
+        .btn-monitoring {
+        background-color: #1ebccd;
+        }
+        .btn-security {
+        background-color: #f38a3e;
+        }
+        .btn-techniques {
+        background-color: #b32059;
+        }
+    .font--bold, .blip-list-item {
+        font-weight: bold;
+    }   
 
 }
 @media only screen and (max-width: 375px) {
