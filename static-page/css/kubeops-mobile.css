@@ -1,0 +1,93 @@
+.kubeops-mobile {
+    display: none;
+}
+@media only screen and (max-width: 425px) {
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+header .radar-title {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+header .radar-title .radar-title__logo {
+    flex: 0 0 45%;
+}
+header .radar-title .radar-title__text {
+    padding-left: 0px;
+}
+header .radar-title .radar-title__text h1 {
+    font-size: 25px;
+    padding: 30px 0 30px 20px;
+    flex-grow: 1;
+}
+
+#radar,
+header #alternative-buttons,
+header .buttons-group {
+    display: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.kubeops-mobile {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+}
+.kubeops-mobile__header {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+    .kubeops-mobile__header--left {
+    order: 1;
+    flex-grow: 1;
+    }
+    .kubeops-mobile__header--right {
+    order: 2;
+    flex-grow: 1;
+    }
+.kubeops-mobile__body {
+}
+.details-section {
+    margin: 20px;
+}
+.details-section--collapse, .kubeops-mobile--inactive {
+    display: none;
+}
+
+.btn-mobile {
+    font-size: 17px;
+    text-align: center;
+    margin: 10px;
+    padding: 5px 10px;
+    color: #fff;
+}
+    .btn-mobile--inactive {
+        background-color: #eee !important;
+        color: black !important;
+    }
+    .btn-tool {
+    background-color: #86b782;
+    }
+    .btn-monitoring {
+    background-color: #1ebccd;
+    }
+    .btn-security {
+    background-color: #f38a3e;
+    }
+    .btn-techniques {
+    background-color: #b32059;
+    }
+
+}
+@media only screen and (max-width: 375px) {
+}
+@media only screen and (max-width: 320px) {
+}

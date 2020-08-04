@@ -1,10 +1,757 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link href="./images/favicon.ico" rel="icon"/>
-  <link href="./main.00dc828b1d6fec673463.css" rel="stylesheet"></head>
 
-  <body>
-  <script type="text/javascript" src="./main.00dc828b1d6fec673463.js"></script></body>
+<head>
+  <title>KubeOps Tech Radar</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta content="KubeOps Tech Radar – An Opinion Technology Guide Trends to Impact Our Industry" name="description" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="KubeOps Tech Radar" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tech-radar.kubeops.guru" />
+  <meta name="og:description"
+    content="KubeOps Tech Radar – An Opinion Technology Guide Trends to Impact Our Industry" />
+  <meta property="og:site_name" content="KubeOps Tech Radar" />
+  <meta name="og:image" content="./images/kubeops-fbpost.png" />
+
+  <link href="./images/logo.ico" rel="icon" type="image/x-icon" />
+  <link href="./main.00dc828b1d6fec673463.css" rel="stylesheet" />
+  <link href="./css/kubeops-mobile.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+  <script type="text/javascript" src="./main.00dc828b1d6fec673463.js"></script>
+  <div class="kubeops-mobile kubeops-mobile--inactive">
+    <div class="kubeops-mobile__header">
+      <div class="kubeops-mobile__header--left">
+        <div class="btn-mobile btn-tool" onclick="addActiveBtn('.btn-tool', '.section-tools')">Tools &amp; frameworks</div>
+        <div class="btn-mobile btn-security" onclick="addActiveBtn('.btn-security', '.section-monitoring')">Security</div>
+      </div>
+      <div class="kubeops-mobile__header--right">
+        <div class="btn-mobile btn-monitoring" onclick="addActiveBtn('.btn-monitoring', '.section-security')">Monitoring tools</div>
+        <div class="btn-mobile btn-techniques" onclick="addActiveBtn('.btn-techniques', '.section-technique')">Techniques</div>
+      </div>
+    </div>
+    <div class="kubeops-mobile__body">
+      <div class="details-section  section-tools details-section--collapse">
+        <h2 class="quadrant-table__name">Tools &amp; frameworks</h2>
+        <h3>assess</h3>
+        <ul>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-1">1. Dekorate</div>
+            <div id="blip-description-1" class="blip-item-description">
+              <p>
+                Dekorate is a collection of Java compile-time generators and
+                decorators for Kubernetes/OpenShift manifests. It makes
+                generating Kubernetes manifests as easy as adding a dependency
+                to the classpath and customizing as simple as setting an
+                annotation or application property
+
+                <br /><br />
+              <h4>Opinion</h4>
+
+              Dekorate has some limitations about container resources and
+              deployment strategies definition. We recommeded to use this with
+              concern.
+
+              <br /><br /><a href="https://github.com/dekorateio/dekorate">Dekorate Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-4">4. Pulumi</div>
+            <div id="blip-description-4" class="blip-item-description">
+              <p>
+                Pulumi automatically provisions and manages your AWS, Azure,
+                Google Cloud Platform, and/or Kubernetes resources, using an
+                infrastructure-as-code approach. Skip the YAML, and use standard
+                language features like loops, functions, classes, and package
+                management that you already know and love.
+
+                <br /><br />
+              <h4>Opinion</h4>
+
+              We love this tool as we can use our favourite languages such as
+              Typescript to define infrastructure components. However, we
+              didn't evaluate enough if it would work smoothly on production,
+              or multiple environments.
+
+              <br /><br /><a href="https://www.pulumi.com/">Pulumi Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-14">14. Istio</div>
+            <div id="blip-description-14" class="blip-item-description">
+              <p>
+                Cloud platforms provide a wealth of benefits for the
+                organizations that use them. However, there’s no denying that
+                adopting the cloud can put strains on DevOps teams. Developers
+                must use microservices to architect for portability, meanwhile
+                operators are managing extremely large hybrid and multi-cloud
+                deployments. Istio lets you connect, secure, control, and
+                observe services.
+
+                <br /><br />
+              <h4>Opinion</h4>
+              It's a group of proxy servers (service mesh) that can observe
+              what's happening with automatic tracing, monitoring, and logging
+              of all your services and control the flow of traffic and API
+              calls between services.
+
+              <br /><br /><a href="https://istio.io/">Istio Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-15">15. Jlink</div>
+            <div id="blip-description-15" class="blip-item-description">
+              <p>
+                Jlink is a tool to assemble and optimize a set of Java modules
+                and their dependencies into a custom JRE runtime image.
+
+                <br /><br />
+              <h4>Opinion</h4>
+              It's a tool used for creating a bundle of JRE that means you can
+              customize the JRE as your own and optimize for improving the
+              size and performance of your JRE.
+
+              <br /><br /><a href="https://docs.oracle.com/javase/9/tools/jlink.htm">Cloud Native Build Pack Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-24">24. Rio</div>
+            <div id="blip-description-24" class="blip-item-description">
+              <p>
+                Rio is an Application Deployment Engine for Kubernetes that can
+                be layered on top of any standard Kubernetes cluster. Consisting
+                of a few Kubernetes custom resources and a CLI to enhance the
+                user experience, users can easily deploy services to Kubernetes
+                and automatically get continuous delivery, DNS, HTTPS, routing,
+                monitoring, autoscaling, canary deployments, git-triggered
+                builds, and much more. All it takes to get going is an existing
+                Kubernetes cluster and the rio CLI.
+
+                <br /><br />
+              <h4>Opinion</h4>
+              It's an application deployment engine on top of Kubernetes just
+              like OKD. However, it's still currently in Beta version. It can
+              manage pipelines by few CLI commands.
+
+              <br /><br /><a href="https://github.com/rancher/rio">Rio Source</a>.
+              </p>
+            </div>
+          </li>
+        </ul>
+        <h3>adopt</h3>
+        <ul>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-2">2. cdk8s</div>
+            <div id="blip-description-2" class="blip-item-description">
+              <p>
+                cdk8s is a software development framework for defining
+                Kubernetes applications and reusable abstractions using familiar
+                programming languages and rich object-oriented APIs. cdk8s
+                generates pure Kubernetes YAML.
+
+                <br /><br />
+              <h4>Opinion</h4>
+
+              cdk8s makes our developers easier to work with Kubernetes
+              deployment templates with their favourite languages such as
+              Typescript and faster our delivery processes.
+
+              <br /><br /><a href="https://cdk8s.io/">CDK8s Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-5">5. Kustomize</div>
+            <div id="blip-description-5" class="blip-item-description">
+              <p>
+                Kustomize lets you customize raw, template-free YAML files for
+                multiple purposes, leaving the original YAML untouched and
+                usable as is.
+
+                <br /><br />
+              <h4>Opinion</h4>
+
+              We're using this on production and it helps us easier to manage
+              Kubernetes YAML files for microservices in multiple environments
+              with less logic and good maintainbility.
+
+              <br /><br /><a href="https://kustomize.io/">Kustomize Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-6">6. Skaffold</div>
+            <div id="blip-description-6" class="blip-item-description">
+              <p>
+                Skaffold handles the workflow for building, pushing and
+                deploying your Kubernetes application, allowing you to focus on
+                what matters most: writing code.
+
+                <br /><br />
+              <h4>Opinion</h4>
+
+              We're using this on production to abstract Kubernetes complexity
+              from our developers, provide continuous development to local
+              developer machines, as well as manage our Kubernetes deployment
+              workflows for multiple environments.
+
+              <br /><br /><a href="https://skaffold.dev/">Skaffold</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-7">7. Helm</div>
+            <div id="blip-description-7" class="blip-item-description">
+              <p>
+                Helm is an open source package manager for Kubernetes. It
+                provides the ability to provide, share, and use software built
+                for Kubernetes. Helm was created in 2015 at Deis, which was
+                later acquired by Microsoft. What is now known as Helm Classic
+                was introduced at the inaugural KubeCon that November. In
+                January 2016, Helm Classic was merged with Google’s Deployment
+                Manager for Kubernetes into the repository that is now the main
+                Helm project. The project currently has more than 30,000 GitHub
+                stars and receives more than 2 million downloads a month from
+                across the globe. In April 2020, Helm hit graduated status
+                within CNCF, joining the ranks of Fluentd, containerd, and
+                others.
+
+                <br /><br />
+              <h4>Opinion</h4>
+
+              Heim is a good tool to manage / install Kubernetes
+              infrastructure tool as a package on Kubernetes cluster with yaml
+              and go templating. However, our pain point is that if we use it
+              for microservice deployments (not infrastructure tools), it
+              could be adding addditional complex layers such as fragile yaml
+              syntax, non-readable templates, difficult to exend it to many
+              microservices. Our recommendation is we should use Helm for
+              complex infrastructure components only.
+
+              <br /><br /><a href="https://helm.sh/">Helm Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-8">8. Terraform</div>
+            <div id="blip-description-8" class="blip-item-description">
+              <p>
+                Terraform is an Infrastructure as Code tool to provision and
+                manage any clouds, infrastructures, or services
+
+                <br /><br />
+              <h4>Opinion</h4>
+
+              Terraform is a tool to reduce the time for provisioning cloud
+              instructure components regardless cloud providers. Terraform
+              separates execution and planning phase from each other. Meaning
+              that we can check what Terraform will provision before
+              execution.
+              <br /><br /><a href="https://www.terraform.io">Terraform Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-13">
+              13. Apache Kafka
+            </div>
+            <div id="blip-description-13" class="blip-item-description">
+              <p>
+                Kafka® is used for building real-time data pipelines and
+                streaming apps. It is horizontally scalable, fault-tolerant,
+                wicked fast, and runs in production in thousands of companies.
+
+                <br /><br />
+              <h4>Opinion</h4>
+              We're using this on Production to stream real time, gathering
+              data metrics, gathering behavior personal information and
+              process them with Kafka Stream then put it into Centralize
+              logging.
+
+              <br /><br /><a href="https://kafka.apache.org">Apache Kafka Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-18">18. Docker</div>
+            <div id="blip-description-18" class="blip-item-description">
+              <p>
+                Docker is a set of platform as a service (PaaS) products that
+                use OS-level virtualization to deliver software in packages
+                called containers.
+
+                <br /><br />
+              <h4>Opinion</h4>
+              We are using this in Kubernetes Container Runtime Engine becuase
+              it's powerful feature and easily to manage image on Kubernetes
+              cluster.
+
+              <br /><br /><a href="https://www.docker.com">Docker Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-21">
+              21. minikube
+            </div>
+            <div id="blip-description-21" class="blip-item-description">
+              <p>
+                A local Kubernetes cluster on macOS, Linux, and Windows. We
+                proudly focus on helping application developers and new
+                Kubernetes users.
+
+                <br /><br />
+              <h4>Opinion</h4>
+              It's a tool for developers that can manage a Kubernetes cluster
+              in their local with deploying containers into minikube by using
+              minikube context.
+
+              <br /><br /><a href="https://minikube.sigs.k8s.io/docs/">Minikube Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-22">
+              22. Jib Plugin
+            </div>
+            <div id="blip-description-22" class="blip-item-description">
+              <p>
+                Jib is a Maven plugin for building Docker and OCI images for
+                your Java applications.
+
+                <br /><br />
+              <h4>Opinion</h4>
+              We're using this plugin for building Java Docker images. It
+              abstracts complexity of building Java Docker images and do some
+              optimizations.
+
+              <br /><br /><a href="https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin/">Jib Plugin
+                Source</a>.
+              </p>
+            </div>
+          </li>
+        </ul>
+        <h3>hold</h3>
+        <ul>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-3">3. cdk</div>
+            <div id="blip-description-3" class="blip-item-description">
+              <p>
+                The AWS Cloud Development Kit (AWS CDK) is an open-source
+                software development framework to define cloud infrastructure
+                (AWS) in code and provision it through AWS CloudFormation.
+
+                <br /><br />
+              <h4>Opinion</h4>
+
+              As it stucks with AWS infrastructure components provisining, so
+              we don't recommend to use it to avoid vendor lock down.
+
+              <br /><br /><a href="https://github.com/cdk/cdk">CDK Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-10">
+              10. Rancher 2
+            </div>
+            <div id="blip-description-10" class="blip-item-description">
+              <p>
+                Rancher is an open source project that provides a container
+                management platform built for organizations that deploy
+                containers in production. Rancher makes it easy to run
+                Kubernetes everywhere, meet IT requirements, and empower DevOps
+                teams.
+
+                <br /><br />
+              <h4>Opinion</h4>
+              It's the platform for managing multiple Kubernetes clusters by
+              Web Based UI. It's easy to use to create another Kubernetes
+              cluster. However, It does not have core features such as a
+              pipeline that is one decision to make us hold it on.
+
+              <br /><br /><a href="https://github.com/rancher/rancher">Rancher 2 Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-17">17. Jenkins</div>
+            <div id="blip-description-17" class="blip-item-description">
+              <p>
+                an open source automation server which enables developers around
+                the world to reliably build, test, and deploy their software.
+
+                <br /><br />
+              <h4>Opinion</h4>
+              It's an ochrestation tool for managing pipelines. However, we
+              think this tool is very complex for creating a pipeline job.
+
+              <br /><br /><a href="https://www.jenkins.io">Jenkins Source</a>.
+              </p>
+            </div>
+          </li>
+        </ul>
+        <h3>trial</h3>
+        <ul>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-9">9. Tekton</div>
+            <div id="blip-description-9" class="blip-item-description">
+              <p>
+                The Tekton Pipelines project provides k8s-style resources for
+                declaring CI/CD-style pipelines. Tekton Pipelines are Cloud
+                Native:
+
+                <br /><br />
+              <h4>Opinion</h4>
+
+              We can leverage K8s capabilities to our pipelines using Tekton
+              such as persistence volumes for pipeline caching, scale pipeline
+              jobs as k8s pods, easy to config as k8s style syntax and good
+              maintainbility.
+
+              <br /><br /><a href="https://github.com/tektoncd/pipeline">Tekton Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-11">11. OKD</div>
+            <div id="blip-description-11" class="blip-item-description">
+              <p>
+                OKD is the Origin community distribution of Kubernetes optimized
+                for continuous application development and multi-tenant
+                deployment. OKD adds developer and operations-centric tools on
+                top of Kubernetes to enable rapid application development, easy
+                deployment and scaling, and long-term lifecycle maintenance for
+                small and large teams.
+
+                <br /><br />
+              <h4>Opinion</h4>
+              It's a platform that you are able to manage a cluster on top of
+              Kubernetes. You are also able to manage pipelines and
+              deployments just a few click.
+
+              <br /><br /><a href="https://github.com/openshift/okd">OKD Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-12">
+              12. Kubeless
+            </div>
+            <div id="blip-description-12" class="blip-item-description">
+              <p>
+                Kubeless is a Kubernetes-native serverless framework that lets
+                you deploy small bits of code (functions) without having to
+                worry about the underlying infrastructure. It is designed to be
+                deployed on top of a Kubernetes cluster and take advantage of
+                all the great Kubernetes primitives. If you are looking for an
+                open source serverless solution that clones what you can find on
+                AWS Lambda, Azure Functions, and Google Cloud Functions,
+                Kubeless is for you!
+
+                <br /><br />
+              <h4>Opinion</h4>
+              It is designed to be deployed on top of a Kubernetes cluster
+              that means you don't worry about the underlying infrastructure.
+              we can create a function as code followed by the runtime.
+
+              <br /><br /><a href="https://kubeless.io/">Kubeless Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-16">
+              16. Cloud Native Build Pack
+            </div>
+            <div id="blip-description-16" class="blip-item-description">
+              <p>
+                A buildpack is something you’ve probably leveraged without
+                knowing, as they’re currently being used in many cloud
+                platforms. A buildpack’s job is to gather everything your app
+                needs to build and run, and it often does this job quickly and
+                quietly. That said, while buildpacks are often a
+                behind-the-scenes detail, they are at the heart of transforming
+                your source code into a runnable app image.
+
+                <br /><br />
+              <h4>Opinion</h4>
+
+              Its a tool for transforming your source code into a runnable app
+              image with predefined scripts without knowledge of Docker.
+              However, the generated runnable app image is huge and
+              vulnerable, so we recommended to use it with this concern.
+
+              <br /><br /><a href="https://github.com/buildpacks/pack">Cloud Native Build Pack Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-19">
+              19. Containerd
+            </div>
+            <div id="blip-description-19" class="blip-item-description">
+              <p>
+                An industry-standard container runtime with an emphasis on
+                simplicity, robustness, and portability.
+
+                <br /><br />
+              <h4>Opinion</h4>
+              We will try this one to improve our performance of Kubernetes
+              cluster because it's lightweight than Docker and so fast.
+
+              <br /><br /><a href="https://containerd.io">ContainerD Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-20">20. k3s</div>
+            <div id="blip-description-20" class="blip-item-description">
+              <p>
+                K3s is a highly available, certified Kubernetes distribution
+                designed for production workloads in unattended,
+                resource-constrained, remote locations or inside IoT and so on
+
+                <br /><br />
+              <h4>Opinion</h4>
+              It's a lightweight Kubernetes Cluster Engine for developing
+              applications in the local cluster. It's lightweight and
+              performance consumption less than minikube that mean you can
+              develop multi-applications in same time.
+
+              <br /><br /><a href="https://k3s.io">K3s Source</a>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-23">23. k1s</div>
+            <div id="blip-description-23" class="blip-item-description">
+              <p>
+                <strong> k1s: The world's simplest Kubernetes dashboard</strong>
+                A minimalistic Kubernetes dashboard allowing you to observe
+                Kubernetes resources of any type in any namespace (or across all
+                namespaces) in real-time. It's implemented as a Bash script with
+                50 lines of code.
+
+                <br /><br />
+              <h4>Opinion</h4>
+              It's a small dashboard which implemented as a Bash script that
+              means it's the lightweight and real-time dashboard for
+              monitoring Kubernetes cluster.
+
+              <br /><br /><a href="https://github.com/weibeld/k1s/">k1s Source</a>.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="details-section  section-monitoring details-section--collapse">
+        <h2 class="quadrant-table__name">Monitoring tools</h2>
+        <h3>adopt</h3>
+        <ul>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-25">25. Weave Scope</div>
+            <div id="blip-description-25" class="blip-item-description">
+              <p>Weave Scope automatically generates an object graph of your Kubernetes applications, enabling you to
+                intuitively understand, monitor, and control your Kubernetes, microservices-based applications.
+
+
+                <br><br>
+              <h4>Opinion</h4>
+
+
+              As we're working on microservices. Weave Scope helps our team to visualize Kubernetes applications in our
+              cluster and their dependencies, traffic flows, cpu, and memory usages. It easily identify and correct
+              issues to ensure the stability and performance of our Kubernetes applications.
+
+
+              <br><br><a href="https://github.com/weaveworks/scope">Weave Scope Source</a>.</p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-26">26. K9s</div>
+            <div id="blip-description-26" class="blip-item-description">
+              <p>K9s provides a terminal UI to interact with your Kubernetes clusters. The aim of this project is to
+                make it easier to navigate, observe and manage your applications in the wild. K9s continually watches
+                Kubernetes for changes and offers subsequent commands to interact with your observed resources.
+
+
+                <br><br>
+              <h4>Opinion</h4>
+
+              K9s is a powerful monitoring tool for managing Kubernetes clusters with terminal UI without the needed to
+              use kubectl command. It easily navigate, observe, manage our Kubernetes applications.
+
+              <br><br><a href="https://github.com/derailed/k9s">K9s Source</a>.</p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-28">28. Grafana</div>
+            <div id="blip-description-28" class="blip-item-description">
+              <p>Grafana has pluggable data source model and comes bundled with rich support for many of the most
+                popular time series databases like Graphite, Prometheus, Elasticsearch, OpenTSDB and InfluxDB. It also
+                has built-in support for cloud monitoring vendors like Google Stackdriver, Amazon Cloudwatch, Microsoft
+                Azure and SQL databases like MySQL and Postgres. Grafana is the only tool that can combine data from so
+                many places into a single dashboard.
+
+                <br><br>
+              <h4>Opinion</h4>
+              We use Grafana tools for visualizing data from metric. It's easy to use and modify UI as you want.
+
+              <br><br><a href="https://grafana.com/">Grafana Source</a>.</p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-29">29. Prometheus</div>
+            <div id="blip-description-29" class="blip-item-description">
+              <p>Prometheus is an open-source systems monitoring and alerting toolkit originally built at SoundCloud.
+                Since its inception in 2012, many companies and organizations have adopted Prometheus, and the project
+                has a very active developer and user community. It is now a standalone open source project and
+                maintained independently of any company.
+
+                <br><br>
+              <h4>Opinion</h4>
+              We use Prometheus tools for gathering metrics then digest into Grafana for visualizing data.
+
+              <br><br><a href="https://prometheus.io/">Prometheus Source</a>.</p>
+            </div>
+          </li>
+        </ul>
+        <h3>hold</h3>
+        <ul>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-27">27. Lens</div>
+            <div id="blip-description-27" class="blip-item-description">
+              <p>Lens is the only IDE you’ll ever need to take control of your Kubernetes clusters. It is a standalone
+                application for MacOS, Windows and Linux operating systems. It is open source and free.
+
+              <h4>Opinion</h4>
+
+              As our engineering nature, we prefer to use command line / terminal UI rather than the standalone
+              application (GUI based) which more improve in term of productivity and save our time.
+
+              <a href="https://github.com/lensapp/lens">Lens Source</a>.</p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-30">30. Kubernetes Dashboard</div>
+            <div id="blip-description-30" class="blip-item-description">
+              <p>Dashboard is a web-based Kubernetes user interface. You can use Dashboard to deploy containerized
+                applications to a Kubernetes cluster, troubleshoot your containerized application, and manage the
+                cluster resources.
+
+                <br><br>
+              <h4>Opinion</h4>
+              We don't like UI. It's the dashboard that looks complex and difficult for managing Kubernetes cluster.
+
+              <br><br><a href="https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/">Kubernetes
+                Dashboard Source</a>.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="details-section  section-security details-section--collapse">
+        <h2 class="quadrant-table__name">Security</h2>
+        <h3>adopt</h3>
+        <ul>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-31">31. Certificate Manager</div>
+            <div id="blip-description-31" class="blip-item-description">
+              <p>cert-manager is a Kubernetes add-on to automate the management and issuance of TLS certificates from
+                various issuing sources.
+
+                It will ensure certificates are valid and up to date periodically, and attempt to renew certificates at
+                an appropriate time before expiry.
+
+                It is loosely based upon the work of kube-lego and has borrowed some wisdom from other similar projects
+                e.g. kube-cert-manager.
+
+                <br><br>
+              <h4>Opinion</h4>
+
+              Certificate Manager is a good tool to generate and sign Let's Encrypt certificates like CertBot, but for
+              Kubernetes Ingress resources.
+
+              It's easy to generate and sign certificates with only few annotations on Ingress resources.
+
+
+              <br><br><a href="https://github.com/jetstack/cert-manager">Certificate Manager Source</a>.</p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-32">32. HashiCorp Vault</div>
+            <div id="blip-description-32" class="blip-item-description">
+              <p>Manage Secrets and Protect Sensitive Data Secure, store and tightly control access to tokens,
+                passwords, certificates, encryption keys for protecting secrets and other sensitive data using a UI,
+                CLI, or HTTP API.
+
+                <br><br>
+              <h4>Opinion</h4>
+              We are using this for keeping the sensitive data of our configuration. It can control access by using
+              token and specific path by enviroment.
+
+              <br><br><a href="https://www.vaultproject.io/">HashiCorp Vault Source</a>.</p>
+            </div>
+          </li>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-33">33. AWS Secret Manager</div>
+            <div id="blip-description-33" class="blip-item-description">
+              <p>AWS Secrets Manager helps you protect secrets needed to access your applications, services, and IT
+                resources. The service enables you to easily rotate, manage, and retrieve database credentials, API
+                keys, and other secrets throughout their lifecycle. Users and applications retrieve secrets with a call
+                to Secrets Manager APIs, eliminating the need to hardcode sensitive information in plain text
+
+                <br><br>
+              <h4>Opinion</h4>
+              It's like a HashiCorp Vault. However, It's managed by AWS as SaaS (Software as a Services). It's a secrets
+              management service that helps you protect credentials access for your applications, services, and IT
+              resources.
+
+              <br><br><a href="https://aws.amazon.com/secrets-manager">AWS Secret Manager Source</a>.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="details-section  section-technique details-section--collapse">
+        <h2 class="quadrant-table__name">Techniques</h2>
+        <h3>adopt</h3>
+        <ul>
+          <li>
+            <div class="blip-list-item" id="blip-list-item-34">34. Distroless Image</div>
+            <div id="blip-description-34" class="blip-item-description">
+              <p>"Distroless" images contain only your application and its runtime dependencies. They do not contain
+                package managers, shells or any other programs you would expect to find in a standard Linux
+                distribution.
+
+                <br><br>
+              <h4>Opinion</h4>
+              It's a powerful technique that helps us to improve the size and performance of container images. by
+              default, it does not contain a shell just include main application and runtime dependencies. That means,
+              it cut out unnecessary for your app is a best practice employed by Google.
+
+              <br><br><a href="https://github.com/GoogleContainerTools/distroless">Distroless Image Source</a>.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./js/kubeops-mobile.js" type="text/javascript"></script>
+</body>
+
 </html>
