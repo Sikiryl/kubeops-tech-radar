@@ -10,4 +10,3 @@ function addActiveBtn(activeBtn, activeSection) {
 $("body").on('DOMNodeInserted ', '#radar', function(){
     $('.kubeops-mobile').removeClass("kubeops-mobile--inactive");
 });
-

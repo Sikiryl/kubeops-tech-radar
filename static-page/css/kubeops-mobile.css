@@ -12,9 +12,15 @@ header .radar-title {
     flex-direction: row;
     padding: 0;
 }
+
 header .radar-title .radar-title__logo {
-    flex: 0 0 60%;
+    flex: 0 0 48%;
 }
+
+header .radar-title .radar-title__logo img {
+    width: 56%;
+}
+
 header .radar-title .radar-title__text {
     padding-left: 0px;
 }
